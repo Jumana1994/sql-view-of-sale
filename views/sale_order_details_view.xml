@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- &lt;!&ndash; Form view Action for Project Task Details ?-->
+    <record id="action_sale_order_details_view" model="ir.actions.act_window">
+        <field name="name">Sale order details</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sale.order.details</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" eval="False"/>
+    </record>
+    <record model="ir.ui.view" id="action_project_task_details_tree">
+        <field name="name">Sale order details</field>
+        <field name="model">sale.order.details</field>
+        <field name="arch" type="xml">
+            <tree string="Sale order details" create="false">
+                <field name='name'/>
+                <field name='company_id'/>
+                <field name='partner_id'/>
+                <field name='date_order'/>
+            </tree>
+        </field>
+    </record>
+    <menuitem name="Sale Order Details"
+              action="action_sale_order_details_view"
+              id="menu_project_task_details_action"
+              parent="sale.menu_sales_config" sequence="4"/>
+</odoo>
